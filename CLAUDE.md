@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.13.1 (backend), TypeScript 5.x (frontend) + FastAPI, SQLAlchemy 2.0 (async), Next.js 14, shadcn/ui, Tailwind CSS 3 (001-corvit-agentic-system)
+- PostgreSQL 16 (Docker), Redis 7 (Docker), ChromaDB (local), Ollama (local) (001-corvit-agentic-system)
+
+## Recent Changes
+- 001-corvit-agentic-system: Added Python 3.13.1 (backend), TypeScript 5.x (frontend) + FastAPI, SQLAlchemy 2.0 (async), Next.js 14, shadcn/ui, Tailwind CSS 3
