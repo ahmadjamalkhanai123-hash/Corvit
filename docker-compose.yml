@@ -1,0 +1,63 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: corvit_app
+    ports:
+      - "3000:3000"
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://corvit:corvit123@postgres:5432/corvit_db
+      REDIS_URL: redis://redis:6379/0
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      OLLAMA_MODEL: qwen2.5:7b
+      LLM_PROVIDER: ollama
+      CHROMA_DB_PATH: /app/data/chroma_db
+      JWT_SECRET: corvit-dev-secret-change-in-production
+      DEBUG: "false"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - chroma_data:/app/data/chroma_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: corvit_postgres
+    environment:
+      POSTGRES_DB: corvit_db
+      POSTGRES_USER: corvit
+      POSTGRES_PASSWORD: corvit123
+    ports:
+      - "5432:5432"
+    volumes:
+      - corvit_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U corvit -d corvit_db"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: corvit_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - corvit_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  corvit_pgdata:
+  corvit_redis_data:
+  chroma_data:

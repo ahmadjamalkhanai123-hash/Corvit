@@ -4,7 +4,7 @@
 
 ## Prerequisites
 
-- Python 3.13.1 with uv 0.9.24+
+- Python 3.13+ with uv 0.9.24+
 - Node.js 20+ with npm/pnpm
 - Docker Desktop with WSL2
 - Ollama installed (`winget install Ollama.Ollama`)
@@ -23,7 +23,7 @@ cd backend
 
 # Initialize Python project
 uv init --name corvit-agentic-system
-uv python pin 3.13.1
+uv python pin 3.13
 
 # Install dependencies
 uv add fastapi "uvicorn[standard]" "sqlalchemy[asyncio]" asyncpg \
@@ -73,9 +73,8 @@ cd frontend
 npm install
 # or: pnpm install
 
-# Copy environment file
-cp .env.local.example .env.local
-# Set: NEXT_PUBLIC_API_URL=http://localhost:8000
+# Create environment file
+echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
 
 # Start development server
 npm run dev
@@ -102,9 +101,9 @@ npm run dev
 cd backend
 uv run pytest tests/ -v
 
-# Frontend tests (when available)
+# Frontend build check
 cd frontend
-npm run test
+npm run build
 ```
 
 ## Environment Variables

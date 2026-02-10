@@ -1,3 +1,4 @@
+
 # API Contract: Courses
 
 **Base**: `/api/courses`

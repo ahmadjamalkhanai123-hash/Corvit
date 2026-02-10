@@ -1,0 +1,33 @@
+attendance:
+  thresholds:
+    - level: yellow
+      min_percentage: 75
+      max_percentage: 85
+      message: "Attendance below 85%. Please improve attendance."
+    - level: orange
+      min_percentage: 60
+      max_percentage: 75
+      message: "Attendance below 75%. Guardian has been notified."
+    - level: red
+      min_percentage: 0
+      max_percentage: 60
+      message: "Attendance below 60%. Escalated to Director Agent."
+  consecutive_absences:
+    threshold: 3
+    level: red
+    message: "3 consecutive absences detected. Guardian notification sent."
+
+fees:
+  thresholds:
+    - level: yellow
+      days_overdue: 7
+      max_days_overdue: 15
+      message: "Fee payment 7+ days overdue. SMS reminder sent."
+    - level: orange
+      days_overdue: 15
+      max_days_overdue: 30
+      message: "Fee payment 15+ days overdue. Student and guardian notified."
+    - level: red
+      days_overdue: 30
+      max_days_overdue: null
+      message: "Fee payment 30+ days overdue. Escalated to Director Agent."

@@ -1,0 +1,136 @@
+{
+  "courses": [
+    {
+      "name": "CCNA (Cisco Certified Network Associate)",
+      "description": "Complete networking fundamentals course covering routing, switching, network security, and automation. Hands-on lab practice with Cisco equipment.",
+      "duration": "12 weeks",
+      "fee": "PKR 25,000",
+      "category": "Networking",
+      "prerequisites": "Basic computer knowledge",
+      "certification": "Cisco CCNA 200-301"
+    },
+    {
+      "name": "Ethical Hacking (CEH)",
+      "description": "Certified Ethical Hacker course covering penetration testing, vulnerability assessment, network security, web application security, and social engineering.",
+      "duration": "10 weeks",
+      "fee": "PKR 30,000",
+      "category": "Cybersecurity",
+      "prerequisites": "Basic networking knowledge (CCNA recommended)",
+      "certification": "EC-Council CEH v12"
+    },
+    {
+      "name": "AI & Machine Learning",
+      "description": "Python-based AI/ML course covering scikit-learn, TensorFlow, natural language processing, computer vision, and deep learning fundamentals.",
+      "duration": "16 weeks",
+      "fee": "PKR 35,000",
+      "category": "Artificial Intelligence",
+      "prerequisites": "Python programming basics",
+      "certification": "Corvit AI/ML Professional"
+    },
+    {
+      "name": "Cloud Computing (AWS)",
+      "description": "AWS Solutions Architect course covering EC2, S3, VPC, IAM, Lambda, CloudFormation, and other core AWS services.",
+      "duration": "12 weeks",
+      "fee": "PKR 28,000",
+      "category": "Cloud",
+      "prerequisites": "Basic IT knowledge",
+      "certification": "AWS Solutions Architect Associate"
+    },
+    {
+      "name": "Full-Stack Web Development",
+      "description": "Complete web development course covering HTML, CSS, JavaScript, React, Node.js, databases, and deployment.",
+      "duration": "14 weeks",
+      "fee": "PKR 20,000",
+      "category": "Development",
+      "prerequisites": "None",
+      "certification": "Corvit Web Development Professional"
+    },
+    {
+      "name": "CompTIA Security+",
+      "description": "Industry-standard cybersecurity certification course covering threats, vulnerabilities, cryptography, identity management, and risk management.",
+      "duration": "8 weeks",
+      "fee": "PKR 22,000",
+      "category": "Cybersecurity",
+      "prerequisites": "Basic IT knowledge",
+      "certification": "CompTIA Security+ SY0-701"
+    }
+  ],
+  "teachers": [
+    {
+      "name": "Haleema Sayyar",
+      "specialization": "Networking & Infrastructure",
+      "qualifications": "CCNA, CCNP certified. 8+ years of experience in network engineering and training.",
+      "courses": ["CCNA", "Web Development"]
+    },
+    {
+      "name": "Muhammad Arslan",
+      "specialization": "Cybersecurity",
+      "qualifications": "CEH, OSCP certified. Expert in penetration testing and security auditing.",
+      "courses": ["Ethical Hacking", "CompTIA Security+"]
+    },
+    {
+      "name": "Sara Khan",
+      "specialization": "AI & Machine Learning",
+      "qualifications": "MS Computer Science specializing in AI/ML. Published researcher in NLP.",
+      "courses": ["AI & Machine Learning"]
+    },
+    {
+      "name": "Usman Ali",
+      "specialization": "Cloud Computing",
+      "qualifications": "AWS SAA, Azure AZ-104 certified. 5+ years cloud architecture experience.",
+      "courses": ["Cloud Computing (AWS)"]
+    }
+  ],
+  "infrastructure": [
+    {
+      "name": "Lab-1 (Networking Lab)",
+      "description": "Equipped with 10 Cisco Router 2901, 15 Cisco Switch 2960, rack servers, and cabling tools. Used for CCNA and AWS practical sessions.",
+      "capacity": 30,
+      "equipment": ["Cisco Router 2901 x10", "Cisco Switch 2960 x15", "Rack Servers x3", "UPS Systems x2"]
+    },
+    {
+      "name": "Lab-2 (Security Lab)",
+      "description": "20 Kali Linux workstations with dedicated network for penetration testing. Isolated from main network for safe security testing.",
+      "capacity": 25,
+      "equipment": ["Kali Linux Workstation x20", "Network Switches x5", "Firewall Appliance x2"]
+    },
+    {
+      "name": "Lab-3 (AI/ML Lab)",
+      "description": "4 GPU servers with RTX 3090 for deep learning training. High-performance computing environment for AI projects.",
+      "capacity": 20,
+      "equipment": ["GPU Server (RTX 3090) x4", "High-RAM Workstation x10", "NAS Storage x1"]
+    },
+    {
+      "name": "Seminar Hall",
+      "description": "Large seminar hall with projector, sound system, and seating for 100+. Used for guest lectures, workshops, and certification ceremonies.",
+      "capacity": 100,
+      "equipment": ["Projector x1", "Sound System x1", "Whiteboard x2"]
+    }
+  ],
+  "policies": [
+    {
+      "title": "Attendance Policy",
+      "content": "Students must maintain minimum 75% attendance to be eligible for certification. Below 85% triggers a yellow warning. Below 75% triggers an orange warning with guardian notification. Below 60% triggers a red alert with escalation to the Director. Three consecutive absences result in an automatic red alert and guardian notification."
+    },
+    {
+      "title": "Fee Payment Policy",
+      "content": "Fees are due within 30 days of batch start date. Late payments: 7 days overdue triggers a yellow reminder. 15 days overdue triggers an orange warning with guardian notification. 30 days overdue triggers a red alert with suspension warning. Partial payments are accepted and tracked."
+    },
+    {
+      "title": "Examination Policy",
+      "content": "Each batch has quizzes, midterm, and final exams. Grading: A (90%+), B (80-89%), C (70-79%), D (60-69%), F (below 60%). Students must pass the final exam to receive certification. Re-examination is allowed once."
+    },
+    {
+      "title": "Lab Usage Policy",
+      "content": "Labs must be booked in advance. Equipment must be handled carefully. Any damage must be reported immediately. Lab hours: 9 AM to 6 PM on weekdays, 9 AM to 2 PM on Saturdays. Students can book individual practice sessions outside class hours."
+    },
+    {
+      "title": "About Corvit Systems",
+      "content": "Corvit Systems is a premier IT training institute located in Peshawar, Pakistan. Founded with the mission to bridge the IT skills gap, Corvit offers industry-recognized certification courses in Networking, Cybersecurity, AI/ML, Cloud Computing, and Web Development. Our hands-on approach with real equipment and expert instructors ensures students are job-ready."
+    },
+    {
+      "title": "Admission Process",
+      "content": "Admissions are open throughout the year on a rolling basis. Students can apply online or visit the campus. Requirements: CNIC copy, passport photos, educational certificates. After registration, students are assigned to the next available batch for their chosen course."
+    }
+  ]
+}
