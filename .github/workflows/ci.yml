@@ -28,7 +28,6 @@ jobs:
         with:
           image-ref: 'corvit-app:latest'
 
-      # 🔐 LOGIN
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
