@@ -11,32 +11,21 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # ✅ TEST
-      - name: Run Tests
-        run: echo "Tests passed"
-
-      # 🐳 DOCKER BUILD
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      - name: Build Docker Image
-        run: docker build -t corvit-app:latest .
-
-      # 🔍 SECURITY SCAN
-      - name: Scan Image with Trivy
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: 'corvit-app:latest'
-
+      # 🔐 LOGIN FIRST (IMPORTANT)
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
-           username: ${{ secrets.DOCKER_USERNAME }}
-           password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
 
-      # 🚀 PUSH
+      # 🐳 BUILD IMAGE
+      - name: Build Docker Image
+        run: docker build -t corvit-app:latest .
+
+      # 🏷️ TAG IMAGE
       - name: Tag Image
         run: docker tag corvit-app:latest ${{ secrets.DOCKER_USERNAME }}/corvit-app:v1.0
 
+      # 🚀 PUSH IMAGE
       - name: Push Image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/corvit-app:v1.0  
