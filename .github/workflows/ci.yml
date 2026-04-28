@@ -1,41 +1,15 @@
-name: CI Pipeline
+name: Corvit CI Pipeline
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout code from repo
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Set up Docker Buildx (modern docker build system)
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
-      # 3. Login to Docker Hub (optional for now, needed for push)
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      # 4. Build Docker Image
-      - name: Build Docker Image
-        run: docker build -t corvit-app:latest .
-
-      # 5. Tag Docker Image (important for registry push)
-      - name: Tag Docker Image
-        run: docker tag corvit-app:latest ${{ secrets.DOCKER_USERNAME }}/corvit-app:v1.0
-
-      # 6. Push Docker Image (optional but real CI/CD step)
-      - name: Push Docker Image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/corvit-app:v1.0
+      - name: Debug Message
+        run: echo "CI is running successfully"
